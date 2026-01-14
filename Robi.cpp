@@ -63,7 +63,8 @@ public:
 
     void showInfo()
     {
-        cout << endl << "--- ROBI SIM INFO ---" << endl;
+        cout << endl
+             << "--- ROBI SIM INFO ---" << endl;
         cout << "Balance: " << balance << " Tk" << endl;
         cout << "Minutes: " << minutes << endl;
         cout << "SMS: " << sms << endl;
@@ -101,7 +102,8 @@ public:
 
     void showActivePackages()
     {
-        cout << endl << "--- ACTIVE PACKAGES ---" << endl;
+        cout << endl
+             << "--- ACTIVE PACKAGES ---" << endl;
         if (activePackages.empty())
         {
             cout << "No active packages." << endl;
@@ -129,11 +131,13 @@ void buyDataMenu(Robi &r)
     int ch;
     while (true)
     {
-        cout << endl << "--- BUY DATA PACKAGES ---" << endl;
+        cout << endl
+             << "--- BUY DATA PACKAGES ---" << endl;
         cout << "1. 1GB for 50 Tk (30 days)" << endl;
         cout << "2. 3GB for 120 Tk (30 days)" << endl;
         cout << "3. 5GB for 200 Tk (30 days)" << endl;
-        cout << "9. Back" << endl << "0. Exit" << endl;
+        cout << "9. Back" << endl
+             << "0. Exit" << endl;
         cin >> ch;
 
         if (ch == 1)
@@ -154,7 +158,8 @@ void buyMinutesMenu(Robi &r)
     int ch;
     while (true)
     {
-        cout << endl << "--- BUY MINUTES ---" << endl;
+        cout << endl
+             << "--- BUY MINUTES ---" << endl;
         cout << "1. 50  | 3d  | 5 Tk" << endl;
         cout << "2. 100 | 3d  | 9 Tk" << endl;
         cout << "3. 200 | 7d  | 18 Tk" << endl;
@@ -163,7 +168,8 @@ void buyMinutesMenu(Robi &r)
         cout << "6. 1000| 15d | 70 Tk" << endl;
         cout << "7. 2000| 30d | 130 Tk" << endl;
         cout << "8. 5000| 30d | 300 Tk" << endl;
-        cout << "9. Back" << endl << "0. Exit" << endl;
+        cout << "9. Back" << endl
+             << "0. Exit" << endl;
         cin >> ch;
 
         if (ch == 1)
@@ -194,7 +200,8 @@ void buySMSMenu(Robi &r)
     int ch;
     while (true)
     {
-        cout << endl << "--- BUY SMS ---" << endl;
+        cout << endl
+             << "--- BUY SMS ---" << endl;
         cout << "1. 50  | 3d  | 5 Tk" << endl;
         cout << "2. 100 | 3d  | 8 Tk" << endl;
         cout << "3. 200 | 7d  | 15 Tk" << endl;
@@ -203,7 +210,8 @@ void buySMSMenu(Robi &r)
         cout << "6. 1000| 15d | 50 Tk" << endl;
         cout << "7. 2000| 30d | 80 Tk" << endl;
         cout << "8. 5000| 30d | 150 Tk" << endl;
-        cout << "9. Back" << endl << "0. Exit" << endl;
+        cout << "9. Back" << endl
+             << "0. Exit" << endl;
         cin >> ch;
 
         if (ch == 1)
@@ -234,10 +242,14 @@ void buyMainMenu(Robi &r)
     int ch;
     while (true)
     {
-        cout << endl << "--- BUY MENU ---" << endl;
-        cout << "1. Data" << endl << "2. Minutes" << endl << "3. SMS" << endl
+        cout << endl
+             << "--- BUY MENU ---" << endl;
+        cout << "1. Data" << endl
+             << "2. Minutes" << endl
+             << "3. SMS" << endl
              << "4. Active Packages" << endl;
-        cout << "9. Back" << endl << "0. Exit" << endl;
+        cout << "9. Back" << endl
+             << "0. Exit" << endl;
         cin >> ch;
 
         if (ch == 1)
@@ -258,15 +270,28 @@ void buyMainMenu(Robi &r)
 int main()
 {
     Robi r;
+
+    string dial;
+    cout << "Dial USSD Code: ";
+    cin >> dial;
+
+    if (dial != "*1#")
+    {
+        cout << "Invalid USSD\n";
+        return 0;
+    }
+
     int ch;
     while (true)
     {
-        cout << endl << "--- ROBI SIM MENU ---" << endl;
+        cout << endl
+             << "--- ROBI SIM MENU ---" << endl;
         cout << "1. Show Info" << endl
              << "2. Recharge" << endl
              << "3. Buy Packages" << endl
              << "0. Exit" << endl;
-        cout<<endl<<"Enter your choice: ";
+        cout << endl
+             << "Enter your choice: ";
         cin >> ch;
 
         if (ch == 1)
